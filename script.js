@@ -58,12 +58,12 @@ buttonContainer.addEventListener('click', (e) => {
                 case 0:
                     darkerToggle = 1;
                     darkIndex = 0.1;
-                    darkCount = 10
+                    darkCount = 10;
                     break;
                 case 1:
                     darkerToggle = 0;
                     darkIndex = 1;
-                    darkCount = 0
+                    darkCount = 0;
                     break;
             }
             break;
@@ -119,7 +119,7 @@ container.addEventListener('mouseover', (e) => {
 });
 
 function updateStats() {
-    stats.innerHTML = `Current grid: ${sizeGlobal} x ${sizeGlobal}<br>Light to dark: ${darkCount}<br>Random colors: ${randomToggle}    `;
+    stats.innerHTML = `Current grid: ${sizeGlobal} x ${sizeGlobal}<br>Light to dark: ${darkCount}<br>Random colors: ${randomToggle}`;
 }
 
 function randomizeFrom0to255() {
