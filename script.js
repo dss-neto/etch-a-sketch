@@ -144,7 +144,7 @@ function createSketch(rowColumn) {
 
     // Remove all columns/rows before adding new ones
 
-    container.innerHTML = '';
+    container.replaceChildren();
     
     // Amount of rows and amount of columns are the same, so I'm gonna refer
     // to them interchangeably
