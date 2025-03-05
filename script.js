@@ -5,17 +5,17 @@ const container = document.createElement('div');
 container.style.cssText = "display: flex; box-sizing: border-box; flex-wrap: wrap; height:100vh; aspect-ratio: 1/1; background-color: white; border: 8px solid blue;";
 body.appendChild(container);
 
-const leftDiv = document.createElement('div');
-leftDiv.style.cssText = 'display:flex; box-sizing: border-box; flex-flow: column wrap; justify-content: flex-start; gap: 20px;';
-body.appendChild(leftDiv);
+const rightDiv = document.createElement('div');
+rightDiv.style.cssText = 'display:flex; box-sizing: border-box; margin-right:20px; flex-flow: column wrap; justify-content: flex-start; gap: 20px;';
+body.appendChild(rightDiv);
 
 const buttonContainer = document.createElement('div');
 buttonContainer.style.cssText = 'display:flex; box-sizing: border-box; height: fit-content; flex-wrap: wrap; justify-content: flex-start; gap: 2px;';
-leftDiv.appendChild(buttonContainer);
+rightDiv.appendChild(buttonContainer);
 
 const stats = document.createElement('div');
 stats.style.cssText = 'display:flex; color:black; padding:8px; background-color: white; border: solid black 2px;font-family: sans-serif; box-sizing: border-box; margin-left: 20px;';
-leftDiv.appendChild(stats);
+rightDiv.appendChild(stats);
 
 const changeGrid = document.createElement('button');
 changeGrid.style.cssText = 'box-sizing:border-box; text-align: center; height: 40px; width: 140px; margin-left: 20px; margin-top: 20px;';
