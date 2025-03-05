@@ -24,7 +24,7 @@ buttonContainer.appendChild(changeGrid);
 
 const darkButton = document.createElement('button');
 darkButton.style.cssText = 'box-sizing:border-box; text-align: center; height: 40px; width: 140px; margin-left: 20px; margin-top: 20px;';
-darkButton.textContent = "Lighter to darker";
+darkButton.textContent = "Light to dark";
 buttonContainer.appendChild(darkButton);
 
 const randomButton = document.createElement('button');
@@ -84,7 +84,7 @@ changeGrid.addEventListener('click', () => {
 });
 
 function updateStats() {
-    stats.innerHTML = `Current grid: ${sizeGlobal} x ${sizeGlobal}<br>Light to darker: ${darkerToggle}<br>Random colors: ${randomToggle}    `;
+    stats.innerHTML = `Current grid: ${sizeGlobal} x ${sizeGlobal}<br>Light to dark: ${darkerToggle}<br>Random colors: ${randomToggle}    `;
 }
 
 function randomizeFrom0to255() {
