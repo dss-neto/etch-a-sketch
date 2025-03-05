@@ -144,10 +144,7 @@ function createSketch(rowColumn) {
 
     // Remove all columns/rows before adding new ones
 
-    const colBefore = document.querySelectorAll('div#grid');
-    colBefore.forEach(colItem => {
-        container.removeChild(colItem);
-    });
+    container.innerHTML = '';
     
     // Amount of rows and amount of columns are the same, so I'm gonna refer
     // to them interchangeably
