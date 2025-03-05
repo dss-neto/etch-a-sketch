@@ -1,5 +1,5 @@
 const body = document.querySelector('body');
-body.style.cssText = 'background-color: gray; display: flex; justify-content: center; margin:0; padding:0;';
+body.style.cssText = 'background-color: gray; display: flex; justify-content: center; margin:0; padding:0; flex-wrap: wrap;';
 
 const container = document.createElement('div');
 container.style.cssText = "display: flex; box-sizing: border-box; flex-wrap: wrap; height:100vh; aspect-ratio: 1/1; background-color: white; border: 8px solid blue;";
