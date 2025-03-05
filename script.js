@@ -98,6 +98,26 @@ buttonContainer.addEventListener('click', (e) => {
     updateStats();
 });
 
+container.addEventListener('mouseover', (e) => {
+    const target = e.target;
+    switch (target.id) {
+        case 'grid':
+            switch (randomToggle) {
+                case 0:
+                    target.style.backgroundColor = 'black';
+                    break;
+                case 1:
+                    target.style.setProperty('--color1', randomizeFrom0to255());
+                    target.style.setProperty('--color2', randomizeFrom0to255());
+                    target.style.setProperty('--color3', randomizeFrom0to255());
+                    target.style.backgroundColor = 'rgb(var(--color1), var(--color2), var(--color3))';
+                    break;
+            }
+            makeDarker(target);
+            break;
+    }
+});
+
 function updateStats() {
     stats.innerHTML = `Current grid: ${sizeGlobal} x ${sizeGlobal}<br>Light to dark: ${darkCount}<br>Random colors: ${randomToggle}    `;
 }
@@ -124,7 +144,7 @@ function createSketch(rowColumn) {
 
     // Remove all columns/rows before adding new ones
 
-    const colBefore = document.querySelectorAll('div.col');
+    const colBefore = document.querySelectorAll('div#grid');
     colBefore.forEach(colItem => {
         container.removeChild(colItem);
     });
@@ -137,22 +157,7 @@ function createSketch(rowColumn) {
         col.style.cssText = "box-sizing: border-box; aspect-ratio:1/1;";
         col.style.setProperty('--row', rowColumn);
         col.style.flex = '0 0 calc(100%/var(--row))';
-        col.setAttribute('class', 'col');
+        col.setAttribute('id', 'grid');
         container.appendChild(col);
-
-        col.addEventListener('mouseover', () => {
-            switch (randomToggle) {
-                case 0:
-                    col.style.backgroundColor = 'black';
-                    break;
-                case 1:
-                    col.style.setProperty('--color1', randomizeFrom0to255());
-                    col.style.setProperty('--color2', randomizeFrom0to255());
-                    col.style.setProperty('--color3', randomizeFrom0to255());
-                    col.style.backgroundColor = 'rgb(var(--color1), var(--color2), var(--color3))';
-                    break;
-            }
-            makeDarker(col);
-        });
-    }
+        }
 }
