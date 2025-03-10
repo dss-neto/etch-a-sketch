@@ -1,6 +1,6 @@
 const body = document.querySelector("body");
 body.style.cssText =
-  "background-color: gray; display: flex; justify-content: center; margin:0; padding:0; flex-wrap: wrap;";
+  "background-color: gray; height: 98vh;display: flex; justify-content: center; margin:0; padding:0; flex-wrap: wrap;";
 
 const container = document.createElement("div");
 container.style.cssText =
