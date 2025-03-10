@@ -49,7 +49,7 @@ resetButton.style.cssText =
 resetButton.textContent = "Erase all";
 resetButton.setAttribute("id", "resetButton");
 buttonContainer.appendChild(resetButton);
-
+let paint = false;
 let darkerToggle = 0;
 let randomToggle = 0;
 let darkIndex = 1;
@@ -57,6 +57,13 @@ let darkCount = 0;
 let sizeGlobal = 16;
 createSketch(sizeGlobal);
 updateStats();
+
+container.addEventListener("mousedown", (e) => {
+  paint = true;
+});
+container.addEventListener("mouseup", (e) => {
+  paint = false;
+});
 
 buttonContainer.addEventListener("click", (e) => {
   const target = e.target;
@@ -108,23 +115,25 @@ buttonContainer.addEventListener("click", (e) => {
 });
 
 container.addEventListener("mouseover", (e) => {
-  const target = e.target;
-  switch (target.id) {
-    case "grid":
-      switch (randomToggle) {
-        case 0:
-          target.style.backgroundColor = "black";
-          break;
-        case 1:
-          target.style.setProperty("--color1", randomizeFrom0to255());
-          target.style.setProperty("--color2", randomizeFrom0to255());
-          target.style.setProperty("--color3", randomizeFrom0to255());
-          target.style.backgroundColor =
-            "rgb(var(--color1), var(--color2), var(--color3))";
-          break;
-      }
-      makeDarker(target);
-      break;
+  if (paint === true) {
+    const target = e.target;
+    switch (target.id) {
+      case "grid":
+        switch (randomToggle) {
+          case 0:
+            target.style.backgroundColor = "black";
+            break;
+          case 1:
+            target.style.setProperty("--color1", randomizeFrom0to255());
+            target.style.setProperty("--color2", randomizeFrom0to255());
+            target.style.setProperty("--color3", randomizeFrom0to255());
+            target.style.backgroundColor =
+              "rgb(var(--color1), var(--color2), var(--color3))";
+            break;
+        }
+        makeDarker(target);
+        break;
+    }
   }
 });
 
