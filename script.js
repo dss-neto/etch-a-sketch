@@ -58,10 +58,10 @@ let sizeGlobal = 16;
 createSketch(sizeGlobal);
 updateStats();
 
-container.addEventListener("mousedown", (e) => {
+document.addEventListener("mousedown", (e) => {
   paint = true;
 });
-container.addEventListener("mouseup", (e) => {
+document.addEventListener("mouseup", (e) => {
   paint = false;
 });
 
@@ -115,7 +115,7 @@ buttonContainer.addEventListener("click", (e) => {
 });
 
 container.addEventListener("mouseover", (e) => {
-  if (paint === true) {
+  if (paint) {
     const target = e.target;
     switch (target.id) {
       case "grid":
